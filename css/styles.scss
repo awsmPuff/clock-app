@@ -1,0 +1,354 @@
+@import '_variables';
+@import '_mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: $font-style;
+}
+html {
+    font-size: $baseSize;
+    width: 100vw;
+    height: 100vh;
+}
+body {
+    width: 100%;
+}
+.filter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #040d3a4f;
+    margin: auto;
+    z-index: 2;
+}
+h1 {
+    @include font($fontSize: 6.25rem, $fontWeight: 700, $lineHeigt: 6.25rem, $letterSpacing: -0.15rem);
+    color: $white;
+}
+h2 {
+    @include font($fontSize: 1.25rem, $fontWeight: 700, $lineHeigt: 1.5rem);
+}
+h3 {
+    @include font($fontSize: 1rem, $fontWeight: 700, $lineHeigt: 1.75rem, $letterSpacing: 0.18rem);
+    text-transform: uppercase;
+    color: $white;
+}
+h4 {
+    @include font($fontSize: 1rem, $lineHeigt: 1.56rem, $letterSpacing: 0.18rem);
+    text-transform: uppercase;
+    color: $white;
+}
+h5 {
+    @include font($fontSize: 0.85rem, $fontWeight: 700, $lineHeigt: 1.37rem);
+    color: $white;
+}
+h6 {
+    @include font($fontSize: 0.7rem, $lineHeigt: 1.75rem, $letterSpacing: 0.125rem);
+    text-transform: uppercase;
+}
+p, q {
+    @include font($fontSize: 0.85rem, $lineHeigt: 1.37rem);
+    color: $white;
+}
+button {
+    @include button;
+    width: 7.2rem;
+    height: 2.5rem;
+    border-radius: 1.75rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.23rem;
+}
+
+article {
+    margin: 8vh 7.5% 35vh;
+    height: 10vh;
+    position: relative;
+    @include flex($direct: column, $justify: space-between, $align: flex-start, $gap: 1rem);
+    
+    img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1.3rem;
+        height: 1.3rem;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+    backquote {
+        width: 90%;
+        @include flex($justify: flex-start);
+    }
+}
+
+section.location-time {
+    margin: 15vh 7.5% 8vh;
+    height: 26vh;
+    @include flex($direct: column, $justify: center, $align: flex-start, $gap: 1rem);
+    .shift {
+        @include flex($justify: flex-start, $gap: 1rem);
+        .mode {
+            width: 1.4rem;
+            height: 1.4rem;
+        }
+    }
+    span.format {
+        @include flex($align: flex-end, $justify: space-between, $gap: 1rem);
+        color: $white;
+        text-transform: uppercase;
+    }
+}
+
+button.details {
+    position: relative;
+    margin-left: 7.5%;
+    padding-left: 1.5rem;
+    img {
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        right: 0.19rem;
+        transform: rotate(180deg);
+        transition: 0.2s ease-in-out;
+    }
+    img:hover {
+        filter: invert(0.3) brightness(150%);
+    }
+}
+
+section.info {
+    width: 100%;
+    padding: 0 7.5%;
+    margin-top: 7vh;
+    backdrop-filter: blur(25px);
+    @include flex;
+    display: none;
+    .box-container {
+        width: 100%;
+        height: 40vh;
+        @include flex($direct: column, $gap: 3vh);
+        .flex {
+            width: 100%;
+            @include flex($justify: space-between);
+        }
+        hr {
+            display: none;
+        }
+    }
+}
+
+.daytime {
+    background-image: url(../assets/mobile/bg-image-daytime.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    mask-image: linear-gradient($black, #d8d8d8, $black, #262525, #626262);
+    filter: brightness(95%) grayscale(100%);
+    .info {
+        background-color: rgba($white, 0.75);
+        color: $near-black;
+    }
+}
+.nighttime {
+    background-image: url(../assets/mobile/bg-image-nighttime.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    mask-image: linear-gradient($black, #d8d8d8, $black, #262525, #626262);
+    filter: brightness(95%) grayscale(100%);
+    .info {
+        background-color: rgba($black, 0.75);
+        color: $white;
+    }
+}
+
+.sun {
+    background: url(../assets/desktop/icon-sun.svg) no-repeat;
+    background-size: contain;
+}
+.moon {
+    background: url(../assets/desktop/icon-moon.svg) no-repeat;
+    background-size: contain;
+}
+
+
+@media (min-width: 760px) {
+    html {
+        font-size: 16px;
+    }
+    h1 {
+        @include font($fontSize: 7.7rem, $fontWeight: 700, $lineHeigt: 7rem, $letterSpacing: -0.1rem);
+    }
+    h2 {
+        @include font($fontSize: 2rem, $fontWeight: 700, $lineHeigt: 1.6rem);
+    }
+    h3 {
+        font-size: 1.1rem;
+    }
+    h4 {
+        font-size: 1.1rem;
+    }
+    h5 {
+        @include font($fontSize: 1rem, $fontWeight: 700, $lineHeigt: 1.5rem);
+    }
+    p, q {
+        @include font($fontSize: 1rem, $lineHeigt: 1.5rem);
+    }
+    button {
+        width: 7.6rem;
+        height: 3rem;
+        font-size: 0.85rem;
+    }
+    article {
+        margin: 8vh 12.5% 40vh;
+        backquote {
+            width: 95%;
+        }
+    }
+    section.location-time {
+        margin: 20vh 12.5% 3vh;
+        span.format {
+            font-size: 1.3rem;
+        }
+    }
+    button.details {
+        margin-left: 12.5%;
+        padding-left: 1.2rem;
+        img {
+            width: 2.1rem;
+            height: 2.1rem;
+            right: 0.4rem;
+        }
+    }
+    section.info {
+        padding: 9vh 12.5%;
+        height: 40vh;
+        display: none;
+        .box-container {
+            display: grid; 
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 0 10vh;
+            height: 35vh;
+            grid-template-areas: 'a-1 a-2'
+                                 'a-3 a-4';
+            .flex {
+                @include flex($direct: column, $align: flex-start, $gap: 1rem);
+            }
+            .g-1 {
+                grid-area: a-1;
+            }
+            .g-2 {
+                grid-area: a-3;
+                margin-top: -5vh;
+            }
+            .g-3 {
+                grid-area: a-2;
+            }
+            .g-4 {
+                grid-area: a-4;
+                margin-top: -5vh;
+            }
+            hr {
+                display: none;
+            }
+        }
+    }
+    .daytime {
+        background-image: url(../assets/tablet/bg-image-daytime.jpg);
+    }
+    .nighttime {
+        background-image: url(../assets/tablet/bg-image-nighttime.jpg);
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 8rem;
+    }
+    h2 {
+        @include font($fontSize: 2.8rem, $fontWeight: 700, $lineHeigt: 2rem);
+    }
+    h5 {
+        @include font($fontSize: 1rem, $fontWeight: 700, $lineHeigt: 1.5rem);
+    }
+    h6 {
+        @include font($fontSize: 0.8rem, $lineHeigt: 1.75rem, $letterSpacing: 0.125rem);
+    }
+    p, q {
+        @include font($fontSize: 1rem, $lineHeigt: 1.5rem);
+    }
+    button {
+        width: 7.8rem;
+    }
+    article {
+        width: 37.5%;
+    }
+    section.location-time {
+        margin: 15vh 12.5%;
+        gap: 1.3rem;
+        span.format {
+            font-size: 1.5rem;
+        }
+    }
+    button.details {
+        margin-left: calc(87.5% - 8.1rem);
+        margin-top: -9rem;
+        padding-left: 1.5rem;
+        img {
+            width: 2.2rem;
+            height: 2.2rem;
+        }
+    }
+    section.info {
+        display: none;
+        padding: 10vh 12.5%;
+        height: 50vh;
+        margin-top: 8vh;
+        .box-container {
+            gap: 0 50vh;
+            height: 100%;
+            position: relative;
+            .g-2 {
+                margin-top: 0;
+                align-self: flex-end;
+            }
+            .g-4 {
+                margin-top: 0;
+                align-self: flex-end;
+            }
+            hr {
+                display: block;
+                position: absolute;
+                transform: rotate(90deg);
+                margin: auto;
+                left: 0;
+                right: 0;
+                width: 30vh;
+                height: 1px;
+                top: 15vh;
+                opacity: 0.25;
+                border: none;
+            }
+        }
+    }
+    .daytime {
+        background-image: url(../assets/desktop/bg-image-daytime.jpg);
+        hr {
+            background-color: $near-black;
+        }
+    }
+    .nighttime {
+        background-image: url(../assets/desktop/bg-image-nighttime.jpg);
+        hr {
+            background-color: $white;
+        }
+    }
+}
