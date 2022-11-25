@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <title>Clock App</title>
+
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
+</head>
+<body class= "filter">
+  <div class="filter">
+  <!-- QUOTES -->
+   <article class="random-quotes">
+     <img class="refresh" src="./assets/desktop/icon-refresh.svg" alt="refresh">
+     <backquote><q class="quote"></q></backquote>
+     <h5 class="author"></h5>
+   </article>
+
+   <section class="location-time">
+     <div class="shift">
+      <div class="mode sun"></div>
+      <h4 class="greeting">good morning</h4>
+     </div>
+     <span class="format">
+       <h1 class="current-time">00:00</h1>
+       <span class="abbr"></span>
+     </span>
+     <h3>in <span class="city">xxx</span>, <span class="cc">XX</span></h3>
+   </section>
+
+   <button class="details">
+     <div class="detail">More</div>
+     <img class="toggle" src="./assets/desktop/icon-arrow-up.svg"></img>
+   </button>
+
+   <section class="info">
+    <div class="box-container">
+      <hr>
+     <div class="flex g-1">
+       <h6>Current timezone</h6>
+       <h2 class="time-zone">Europe/Dublin</h2>
+     </div>
+     <div class="flex g-2">
+       <h6>Day of the year</h6>
+       <h2 class="day-of-year"></h2>
+     </div>
+     <div class="flex g-3">
+       <h6>Day of the week</h6>
+       <h2 class="day-of-week"></h2>
+     </div>
+     <div class="flex g-4">
+       <h6>Week number</h6>
+       <h2 class="week-number"></h2>
+     </div>
+    </div>
+   </section>
+</div>
+  <script src="./config.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
