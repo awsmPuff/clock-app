@@ -45,7 +45,7 @@ fetch(ipUrl)
     city.innerHTML = info.city;
     countryCode.innerHTML = info.country_code2;
 
-    const worldtimeurl = "https://cors-everywhere.herokuapp.com/http://worldtimeapi.org/api/timezone/" + info.continent_name + "/" + info.city;
+    const worldtimeurl = `http://worldtimeapi.org/api/timezone/${info.continent_name}/${info.city}`;
     fetch(worldtimeurl)
       .then(res => res.json())
       .then(data => {
